@@ -13,5 +13,10 @@ namespace SalonApp
         {
 
         }
+
+        protected void FormView1_PageIndexChanging(object sender, FormViewPageEventArgs e)
+        {
+
+        }
     }
 }

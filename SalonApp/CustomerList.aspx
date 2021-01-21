@@ -118,7 +118,7 @@
             <td class="auto-style22"></td>
         </tr>
 </table>
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="customer_id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" CssClass="auto-style21">
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="customer_id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" CssClass="auto-style21" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="customer_id" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="customer_id">
@@ -142,9 +142,7 @@
             <asp:BoundField DataField="update_date" HeaderText="最終来店日" SortExpression="update_date">
             <ItemStyle Width="80px" />
             </asp:BoundField>
-            <asp:ButtonField ButtonType="Button" CommandName="Edit" Text="編集">
-            <ItemStyle Width="30px" />
-            </asp:ButtonField>
+            <asp:ButtonField ButtonType="Button" CommandName="Edit" Text="編集" />
         </Columns>
         <EditRowStyle BackColor="#999999" />
         <EmptyDataTemplate>
