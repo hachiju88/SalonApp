@@ -1,0 +1,11 @@
+﻿.imeON {
+    ime-mode: active;
+}
+
+.imeOff {
+    ime-mode: disabled;
+}
+
+body {
+    font-size: 20px;
+}
