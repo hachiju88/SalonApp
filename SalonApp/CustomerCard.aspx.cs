@@ -106,5 +106,27 @@ namespace SalonApp
                 Response.Redirect("CustomerList.aspx");
             }
         }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            //新規登録画面の登録ボタン
+        
+
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            //新規登録画面のキャンセルボタン
+        }
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            //編集画面の登録ボタン
+        }
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            //編集画面のキャンセルボタン
+        }
+
+       
     }
 }
