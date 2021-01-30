@@ -72,6 +72,8 @@
     <Content Include="Global.asax" />
     <None Include="Resources\mineSalonApp.png" />
     <None Include="Resources\menuBack.png" />
+    <Content Include="Logon.aspx" />
+    <Content Include="Menu.aspx" />
     <Content Include="StyleSheet1.css" />
     <Content Include="TaskMaster.aspx" />
     <Content Include="Web.config" />
@@ -93,6 +95,20 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Logon.aspx.cs">
+      <DependentUpon>Logon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logon.aspx.designer.cs">
+      <DependentUpon>Logon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
