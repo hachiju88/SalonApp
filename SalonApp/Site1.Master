@@ -24,7 +24,7 @@
                         <asp:Image ID="Image1" runat="server" ImageUrl="~/Resources/mineSalonApp.png" />
                     </td>
                     <td>
-                        <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Resources/menuBack.png" />
+                        <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Resources/menuBack.png" OnClick="ImageButton1_Click" PostBackUrl="~/Menu.aspx" />
                     </td>
                 </tr>
             </table>

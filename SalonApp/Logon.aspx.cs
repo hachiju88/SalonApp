@@ -42,9 +42,9 @@ namespace SalonApp
                 return;
             }
             //セッション変数に値をセット
-            Session["staffID"] = staffID;
-            Session["staffName"] = staffName;
-            Session["adminFlag"] = adminFlag;
+            Session["StaffID"] = staffID;
+            Session["StaffName"] = staffName;
+            Session["AdminFlag"] = adminFlag;
             //メニュー画面に遷移
             Response.Redirect("Menu.aspx");
         }
@@ -57,9 +57,9 @@ namespace SalonApp
 
             try
             {
-                queryString = "SELECT staff_id, staff_name, admin_flag FROM tbl_staff " +
-                    "WHERE user_id = '" + userid.Replace("'", "'") +
-                    "' AND password = '" + password.Replace("'", "'") +
+                queryString = "SELECT user_id, staff_name, admin_flag FROM tbl_staff " +
+                    "WHERE user_id = '" + userid.Replace("'", "''") +
+                    "' AND password = '" + password.Replace("'", "''") + "' " +
                     "COLLATE Japanese_CS_AS_KS_WS";     //SQL Serverでの照合順序、大文字小文字の区別をする表記
 
                 //接続文字列の取得

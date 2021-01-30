@@ -14,11 +14,11 @@
     <asp:Panel ID="AdminPanel" runat="server" Height="400px" Width="1000px">
         <table class="auto-style2">
             <tr>
-                <td>メインメニュー</td>
+                <td>メインメニュー &lt;Adomin&gt;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td style="text-align: right">
-                    <asp:LinkButton ID="LinkButton1" runat="server">ログオフ</asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">ログオフ</asp:LinkButton>
                 </td>
             </tr>
             <tr>
@@ -80,5 +80,69 @@
                 </td>
             </tr>
         </table>
+        <asp:Panel ID="UserPanel" runat="server" Height="400px" Width="1000px">
+            <table class="auto-style2">
+                <tr>
+                    <td>メインメニュー &lt;User&gt;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td style="text-align: right">
+                        <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">ログオフ</asp:LinkButton>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>顧客管理</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="">顧客検索</asp:HyperLink>
+                    </td>
+                    <td>
+                        <asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/CustomerList.aspx">顧客一覧</asp:HyperLink>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Cash Resister</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style3">
+                        <asp:HyperLink ID="HyperLink11" runat="server" NavigateUrl="">売上管理</asp:HyperLink>
+                    </td>
+                    <td class="auto-style3">
+                        <asp:HyperLink ID="HyperLink12" runat="server" NavigateUrl="">営業報告登録</asp:HyperLink>
+                    </td>
+                    <td class="auto-style3">
+                        <asp:HyperLink ID="HyperLink13" runat="server" NavigateUrl="">営業報告一覧</asp:HyperLink>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+        </asp:Panel>
     </asp:Panel>
 </asp:Content>
