@@ -77,8 +77,7 @@
             <td class="auto-style24"></td>
             <td class="auto-style25">ID</td>
             <td class="auto-style26">
-                <asp:TextBox ID="CustomerIDTextBox" runat="server" Width="149px" CssClass="imeON"></asp:TextBox>
-            </td>
+                1</td>
             <td class="auto-style27"></td>
             <td class="auto-style23"></td>
             <td class="auto-style29"></td>
@@ -142,7 +141,7 @@
             <asp:BoundField DataField="update_date" HeaderText="最終来店日" SortExpression="update_date">
             <ItemStyle Width="80px" />
             </asp:BoundField>
-            <asp:ButtonField ButtonType="Button" CommandName="Edit" Text="編集" />
+            <asp:HyperLinkField NavigateUrl="~/CustomerCard.aspx" Text="編集" />
         </Columns>
         <EditRowStyle BackColor="#999999" />
         <EmptyDataTemplate>

@@ -27,7 +27,7 @@ namespace SalonApp
                 return;
             }
             //SQLステートメントの定義（新規用）
-            string queryString = "INSERT INTO tbl_staff" +
+            string queryString = "SET IDENTITY_INSERT tbl_staff ON;" + "INSERT INTO tbl_staff" +
                 " (staff_id, staff_name, user_id, password, admin_flag)" +
                 " VALUES (" + newStaffID + ",'（新規）', '', '', 0)";
 
