@@ -20,7 +20,7 @@ namespace SalonApp
         protected void Page_Load(object sender, EventArgs e)
         {
             //このWebページをキャッシュしないように設定
-            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+           Response.Cache.SetCacheability(HttpCacheability.NoCache);
         }
         
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)

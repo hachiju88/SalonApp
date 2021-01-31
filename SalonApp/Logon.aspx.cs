@@ -57,7 +57,7 @@ namespace SalonApp
 
             try
             {
-                queryString = "SELECT user_id, staff_name, admin_flag FROM tbl_staff " +
+                queryString = "SELECT staff_id, staff_name, admin_flag FROM tbl_staff " +
                     "WHERE user_id = '" + userid.Replace("'", "''") +
                     "' AND password = '" + password.Replace("'", "''") + "' " +
                     "COLLATE Japanese_CS_AS_KS_WS";     //SQL Serverでの照合順序、大文字小文字の区別をする表記
@@ -80,7 +80,7 @@ namespace SalonApp
                         //対象データが存在する場合
                         //正しいユーザーIDとパスワードが指定されると
                         //データリーダーから読んだデータをメンバ変数にセットする
-                        staffID = Int32.Parse(reader["user_id"].ToString());
+                        staffID = Int32.Parse(reader["staff_id"].ToString());
                         staffName = reader["staff_name"].ToString();
                         adminFlag = Convert.ToBoolean(reader["admin_flag"]);
 
