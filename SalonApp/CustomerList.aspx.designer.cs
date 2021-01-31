@@ -24,6 +24,15 @@ namespace SalonApp
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
 
         /// <summary>
+        /// CustomerIDTextBox コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox CustomerIDTextBox;
+
+        /// <summary>
         /// CustomerNameTextBox コントロール。
         /// </summary>
         /// <remarks>
@@ -31,15 +40,6 @@ namespace SalonApp
         /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox CustomerNameTextBox;
-
-        /// <summary>
-        /// CustomerKanaTextBox コントロール。
-        /// </summary>
-        /// <remarks>
-        /// 自動生成されたフィールド。
-        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CustomerKanaTextBox;
 
         /// <summary>
         /// DayBiginTextBox コントロール。
@@ -51,22 +51,49 @@ namespace SalonApp
         protected global::System.Web.UI.WebControls.TextBox DayBiginTextBox;
 
         /// <summary>
-        /// DayAfterTextBox コントロール。
+        /// FilterButton コントロール。
         /// </summary>
         /// <remarks>
         /// 自動生成されたフィールド。
         /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DayAfterTextBox;
+        protected global::System.Web.UI.WebControls.Button FilterButton;
 
         /// <summary>
-        /// FillterButton コントロール。
+        /// CustomerKanaTextBox コントロール。
         /// </summary>
         /// <remarks>
         /// 自動生成されたフィールド。
         /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button FillterButton;
+        protected global::System.Web.UI.WebControls.TextBox CustomerKanaTextBox;
+
+        /// <summary>
+        /// DayAffterTextBox コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox DayAffterTextBox;
+
+        /// <summary>
+        /// FilterCancel コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button FilterCancel;
+
+        /// <summary>
+        /// MessageLabel コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MessageLabel;
 
         /// <summary>
         /// GridView1 コントロール。

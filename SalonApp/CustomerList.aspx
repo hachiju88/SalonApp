@@ -4,119 +4,101 @@
     .auto-style2 {
         width: 1000px;
     }
-    .auto-style3 {
-        width: 75px;
-            height: 5px;
-        }
-    .auto-style4 {
-        width: 120px;
-            height: 5px;
-        }
-    .auto-style6 {
-        width: 157px;
-            height: 5px;
-        }
-    .auto-style7 {
-            width: 50px;
-            height: 5px;
-        }
-    .auto-style8 {
-            width: 100px;
-            height: 5px;
-        }
         .auto-style21 {
             margin-top: 0px;
         }
         .auto-style22 {
-            height: 5px;
+            width: 1000px;
+            height: 40px;
         }
         .auto-style23 {
-            width: 100px;
-            height: 25px;
-        }
-        .auto-style24 {
-            width: 120px;
-            height: 25px;
+            width: 40px;
         }
         .auto-style25 {
-            width: 50px;
-            height: 25px;
+            width: 80px;
         }
         .auto-style26 {
-            width: 157px;
-            height: 25px;
-        }
-        .auto-style27 {
-            width: 75px;
-            height: 25px;
+            width: 110px;
         }
         .auto-style28 {
-            height: 25px;
+            width: 175px;
         }
-        .auto-style29 {
-            width: 25px;
-            height: 25px;
-        }
-        .auto-style30 {
-            width: 25px;
+        .auto-style34 {
             height: 5px;
+        }
+        .auto-style35 {
+            width: 125px;
+        }
+        .auto-style37 {
+            width: 55px;
+        }
+        .auto-style39 {
+            width: 85px;
+        }
+        .auto-style41 {
+            width: 190px;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SalonDBConnectionString %>" SelectCommand="SELECT [customer_id], [customer_kana], [customer_name], [address], [tel], [customer_birth], [update_date] FROM [tbl_customer] WHERE (([customer_name] LIKE '%' + @customer_name + '%') AND ([customer_kana] LIKE '%' + @customer_kana + '%') AND ([customer_id] = @customer_id))">
-        <SelectParameters>
-            <asp:ControlParameter ControlID="CustomerNameTextBox" DefaultValue="%" Name="customer_name" PropertyName="Text" Type="String" />
-            <asp:ControlParameter ControlID="CustomerKanaTextBox" DefaultValue="%" Name="customer_kana" PropertyName="Text" Type="String" />
-            <asp:ControlParameter ControlID="CustomerIDTextBox" Name="customer_id" PropertyName="Text" Type="Int32" />
-        </SelectParameters>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SalonDBConnectionString %>" SelectCommand="SELECT [customer_id], [customer_name], [customer_kana], [address], [tel], [customer_birth], [update_date] FROM [tbl_customer]">
     </asp:SqlDataSource>
-    <table class="auto-style2">
+    <table class="auto-style22">
         <tr>
-            <td class="auto-style23">検索</td>
-            <td class="auto-style24"></td>
-            <td class="auto-style25">ID</td>
-            <td class="auto-style26">
-                1</td>
-            <td class="auto-style27"></td>
-            <td class="auto-style23"></td>
-            <td class="auto-style29"></td>
-            <td class="auto-style23"></td>
-            <td class="auto-style28"></td>
+            <td class="auto-style35">お客様一覧</td>
+            <td class="auto-style25">&nbsp;</td>
+            <td class="auto-style26">&nbsp;</td>
+            <td class="auto-style28">&nbsp;</td>
+            <td class="auto-style39">&nbsp;</td>
+            <td class="auto-style41">&nbsp;</td>
+            <td class="auto-style37">&nbsp;</td>
+            <td class="auto-style23">&nbsp;</td>
+            <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style23">お名前</td>
-            <td class="auto-style24">
-                <asp:TextBox ID="CustomerNameTextBox" runat="server" Width="120px" CssClass="imeON"></asp:TextBox>
+            <td class="auto-style35">お客様ID</td>
+            <td class="auto-style25">
+                <asp:TextBox ID="CustomerIDTextBox" runat="server" CssClass="imeON" TextMode="Number" Width="100px"></asp:TextBox>
             </td>
-            <td class="auto-style25">カナ</td>
-            <td class="auto-style26">
-                <asp:TextBox ID="CustomerKanaTextBox" runat="server" Width="150px" CssClass="imeON"></asp:TextBox>
-            </td>
-            <td class="auto-style27">来店日</td>
-            <td class="auto-style23">
-                <asp:TextBox ID="DayBiginTextBox" runat="server" Width="120px" CssClass="imeON"></asp:TextBox>
-            </td>
-            <td class="auto-style29">～</td>
-            <td class="auto-style23">
-                <asp:TextBox ID="DayAfterTextBox" runat="server" Width="120px" CssClass="imeON"></asp:TextBox>
-            </td>
+            <td class="auto-style26">お客様名</td>
             <td class="auto-style28">
-                <asp:Button ID="FillterButton" runat="server" Text="検索" Width="110px" />
+                <asp:TextBox ID="CustomerNameTextBox" runat="server" CssClass="imeON" Width="170px"></asp:TextBox>
+            </td>
+            <td class="auto-style39">ご来店日</td>
+            <td class="auto-style41">
+                <asp:TextBox ID="DayBiginTextBox" runat="server" CssClass="imeON" TextMode="DateTime" Width="180px"></asp:TextBox>
+            </td>
+            <td class="auto-style37">から</td>
+            <td class="auto-style23">&nbsp;</td>
+            <td>
+                <asp:Button ID="FilterButton" runat="server" OnClick="FilterButton_Click" Text="検索" />
             </td>
         </tr>
         <tr>
-            <td class="auto-style8"></td>
-            <td class="auto-style4"></td>
-            <td class="auto-style7"></td>
-            <td class="auto-style6"></td>
-            <td class="auto-style3"></td>
-            <td class="auto-style8"></td>
-            <td class="auto-style30"></td>
-            <td class="auto-style8"></td>
-            <td class="auto-style22"></td>
+            <td class="auto-style35">&nbsp;</td>
+            <td class="auto-style25">&nbsp;</td>
+            <td class="auto-style26">お客様カナ</td>
+            <td class="auto-style28">
+                <asp:TextBox ID="CustomerKanaTextBox" runat="server" CssClass="imeON" Width="170px"></asp:TextBox>
+            </td>
+            <td class="auto-style39">&nbsp;</td>
+            <td class="auto-style41">
+                <asp:TextBox ID="DayAffterTextBox" runat="server" CssClass="imeON" TextMode="DateTime" Width="180px"></asp:TextBox>
+            </td>
+            <td class="auto-style37">まで</td>
+            <td class="auto-style23">&nbsp;</td>
+            <td>
+                <asp:Button ID="FilterCancel" runat="server" OnClick="FilterCancel_Click" Text="一覧に戻る" />
+            </td>
         </tr>
-</table>
+        <tr>
+            <td class="auto-style34" colspan="9">
+                <asp:Label ID="MessageLabel" runat="server" EnableViewState="False" ForeColor="Red"></asp:Label>
+            </td>
+        </tr>
+    </table>
+    <table class="auto-style2">
+        </table>
     <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="customer_id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" CssClass="auto-style21" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
@@ -144,9 +126,6 @@
             <asp:HyperLinkField NavigateUrl="~/CustomerCard.aspx" Text="編集" />
         </Columns>
         <EditRowStyle BackColor="#999999" />
-        <EmptyDataTemplate>
-            該当するデータがありません。条件を変更して「検索」ボタンをクリックしてください。
-        </EmptyDataTemplate>
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
         <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
         <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
