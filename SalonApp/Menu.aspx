@@ -70,7 +70,7 @@
             <tr>
                 <td>&nbsp;</td>
                 <td>
-                    <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="">スタッフマスタ</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/StaffMaster.aspx">スタッフマスタ</asp:HyperLink>
                 </td>
                 <td>
                     <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="">施術マスタ</asp:HyperLink>
