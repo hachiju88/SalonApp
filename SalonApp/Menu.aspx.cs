@@ -15,13 +15,13 @@ namespace SalonApp
 
             switch (GetUserLevel())
             {
-                case 1:
+                case 1:     //管理者
                     AdminPanel.Visible = true;
                     UserPanel.Visible = false;
                     break;
-                case 2:
+                case 2:     //一般ユーザー
+                    UserPanel.Visible = true; 
                     AdminPanel.Visible = false;
-                    UserPanel.Visible = true;
                     break;
                 default:
                     Response.Redirect("Logon.aspx");
@@ -40,7 +40,7 @@ namespace SalonApp
                 //セッション変数の値が存在しない場合
                 return 0;
             }
-            else if(Convert.ToBoolean(Session["AdminFlag"]))
+            if (Convert.ToBoolean(Session["AdminFlag"]) == true)
             {
                 //  セッション変数Admin = true
                 return 1;
@@ -51,6 +51,7 @@ namespace SalonApp
                 //セッション変数Admin = false
                 return 2;
             }
+
         }
 
         protected void LinkButton1_Click(object sender, EventArgs e)
