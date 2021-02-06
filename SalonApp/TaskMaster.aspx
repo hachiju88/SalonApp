@@ -25,19 +25,19 @@
         <Columns>
             <asp:BoundField DataField="task_id" HeaderText="施術ID" InsertVisible="False" ReadOnly="True" SortExpression="task_id">
             <HeaderStyle Width="100px" />
-            <ItemStyle Width="100px" />
+            <ItemStyle Width="120px" />
             </asp:BoundField>
             <asp:BoundField DataField="task_name" HeaderText="施術名" SortExpression="task_name">
             <ControlStyle Height="100px" />
-            <ItemStyle Width="100px" />
+            <ItemStyle Width="200px" />
             </asp:BoundField>
             <asp:BoundField DataField="maker" HeaderText="メーカー" SortExpression="maker">
             <ControlStyle Width="100px" />
-            <ItemStyle Width="100px" />
+            <ItemStyle Width="200px" />
             </asp:BoundField>
             <asp:BoundField DataField="task_price" HeaderText="単価" SortExpression="task_price">
             <ControlStyle Width="100px" />
-            <ItemStyle Width="100px" />
+            <ItemStyle Width="200px" />
             </asp:BoundField>
             <asp:CommandField ButtonType="Button" ShowDeleteButton="True" ShowEditButton="True" />
         </Columns>

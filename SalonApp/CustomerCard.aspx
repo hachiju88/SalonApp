@@ -29,7 +29,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SalonDBConnectionString %>" SelectCommand="SELECT * FROM [tbl_customer]
-WHERE customer_id = @customer_id" DeleteCommand="DELETE FROM [tbl_customer] WHERE [customer_id] = @customer_id" InsertCommand="INSERT INTO [tbl_customer] ([customer_kana], [customer_name], [address], [tel], [customer_birth], [update_date], [first_date], [sold_sum], [customer_memo]) VALUES (@customer_kana, @customer_name, @address, @tel, @customer_birth, @update_date, @first_date, @sold_sum, @customer_memo)" UpdateCommand="UPDATE [tbl_customer] SET [customer_kana] = @customer_kana, [customer_name] = @customer_name, [address] = @address, [tel] = @tel, [customer_birth] = @customer_birth, [customer_memo] = @customer_memo WHERE [customer_id] = @customer_id">
+WHERE customer_id = @customer_id" DeleteCommand="DELETE FROM [tbl_customer] WHERE [customer_id] = @customer_id" InsertCommand="INSERT INTO [tbl_customer] ([customer_kana], [customer_name], [address], [tel], [customer_birth], [update_date], [first_date], [sold_sum], [customer_memo]) VALUES (@customer_kana, @customer_name, @address, @tel, @customer_birth, @update_date, @first_date, @sold_sum, @customer_memo)" UpdateCommand="UPDATE [tbl_customer] SET [customer_kana] = @customer_kana, [customer_name] = @customer_name, [address] = @address, [tel] = @tel, [customer_memo] = @customer_memo WHERE [customer_id] = @customer_id">
         <DeleteParameters>
             <asp:Parameter Name="customer_id" Type="Int32" />
         </DeleteParameters>
@@ -100,7 +100,7 @@ WHERE customer_id = @customer_id" DeleteCommand="DELETE FROM [tbl_customer] WHER
                     <td class="tableStyle2">
                         <asp:TextBox ID="telTextBox" runat="server" CssClass="imeOff" Text='<%# Bind("tel") %>' Width="240px" />
                         <br />
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="telTextBox" Display="Dynamic" ErrorMessage="20文字以内で入力してください" ForeColor="Red"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="telTextBox" Display="Dynamic" ErrorMessage="20文字以内で入力してください" ForeColor="Red" ValidationExpression=".{0,20}"></asp:RegularExpressionValidator>
                     </td>
                     <td class="tableStyle1">お誕生日</td>
                     <td class="tableStyle2">
@@ -130,7 +130,7 @@ WHERE customer_id = @customer_id" DeleteCommand="DELETE FROM [tbl_customer] WHER
                     </td>
                 </tr>
             </table>
-            &nbsp;<asp:Button ID="Button1" runat="server" CommandName="Update" Height="50px" Text="Button" Width="100px" OnClick="Button1_Click" />
+            &nbsp;<asp:Button ID="Button1" runat="server" CommandName="Update" Height="50px" Text="登録" Width="100px" OnClick="Button1_Click" />
             <asp:Button ID="Button2" runat="server" CommandName="Cancel" Height="50px" Text="キャンセル" Width="100px" CausesValidation="False" OnClick="Button2_Click" />
         </EditItemTemplate>
         <EditRowStyle BackColor="#999999" />
@@ -172,9 +172,10 @@ WHERE customer_id = @customer_id" DeleteCommand="DELETE FROM [tbl_customer] WHER
                     <td class="tableStyle1">電話番号</td>
                     <td class="auto-style4" colspan="3">
                         <br />
-                        <asp:TextBox ID="telTextBox0" runat="server" CssClass="imeOff" Text='<%# Bind("tel") %>' Width="240px" />
+                        <asp:TextBox ID="telTextBox0" runat="server" CssClass="imeOff" Text='<%# Bind("tel") %>' Width="240px" OnTextChanged="telTextBox0_TextChanged" />
                         <br />
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" ControlToValidate="telTextBox0" Display="Dynamic" ErrorMessage="20文字以内で入力してください" ForeColor="Red" ValidationExpression=".{0,20}"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator12" runat="server" ControlToValidate="telTextBox0" Display="Dynamic" ErrorMessage="20文字以内で入力してください" ForeColor="Red" ValidationExpression=".{0,20}"></asp:RegularExpressionValidator>
+                        <br />
                     </td>
                 </tr>
                 <tr>

@@ -127,6 +127,9 @@ namespace SalonApp
             //編集画面のキャンセルボタン
         }
 
-       
+        protected void telTextBox0_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
