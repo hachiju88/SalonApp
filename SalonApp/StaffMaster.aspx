@@ -27,22 +27,22 @@
         <Columns>
             <asp:BoundField DataField="staff_id" HeaderText="スタッフID" InsertVisible="False" ReadOnly="True" SortExpression="staff_id">
             <ControlStyle Width="100px" />
-            <ItemStyle Width="100px" />
+            <ItemStyle Width="120px" />
             </asp:BoundField>
             <asp:BoundField DataField="staff_name" HeaderText="スタッフ名" SortExpression="staff_name">
             <ControlStyle Width="100px" />
-            <ItemStyle Width="100px" />
+            <ItemStyle Width="200px" />
             </asp:BoundField>
-            <asp:BoundField DataField="user_id" HeaderText="ユーザーID（ログインID）" SortExpression="user_id">
+            <asp:BoundField DataField="user_id" HeaderText="ログインID" SortExpression="user_id">
             <ControlStyle Width="100px" />
-            <ItemStyle Width="100px" />
+            <ItemStyle Width="150px" />
             </asp:BoundField>
             <asp:BoundField DataField="password" HeaderText="パスワード" SortExpression="password">
             <ControlStyle Width="100px" />
-            <ItemStyle Width="100px" />
+            <ItemStyle Width="150px" />
             </asp:BoundField>
             <asp:CheckBoxField DataField="admin_flag" HeaderText="管理者権限" SortExpression="admin_flag">
-            <ItemStyle HorizontalAlign="Center" />
+            <ItemStyle HorizontalAlign="Center" Width="150px" />
             </asp:CheckBoxField>
             <asp:CommandField ButtonType="Button" ShowEditButton="True" />
         </Columns>

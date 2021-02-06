@@ -58,15 +58,15 @@
         <tr>
             <td class="auto-style35">お客様ID</td>
             <td class="auto-style25">
-                <asp:TextBox ID="CustomerIDTextBox" runat="server" CssClass="imeON" TextMode="Number" Width="100px"></asp:TextBox>
+                <asp:TextBox ID="CustomerIDTextBox" runat="server" CssClass="imeON" TextMode="Number" Width="100px" MaxLength="4"></asp:TextBox>
             </td>
             <td class="auto-style26">お客様名</td>
             <td class="auto-style28">
-                <asp:TextBox ID="CustomerNameTextBox" runat="server" CssClass="imeON" Width="170px"></asp:TextBox>
+                <asp:TextBox ID="CustomerNameTextBox" runat="server" CssClass="imeON" Width="170px" MaxLength="20" OnTextChanged="CustomerNameTextBox_TextChanged"></asp:TextBox>
             </td>
             <td class="auto-style39">ご来店日</td>
             <td class="auto-style41">
-                <asp:TextBox ID="DayBiginTextBox" runat="server" CssClass="imeON" TextMode="DateTime" Width="180px"></asp:TextBox>
+                <asp:TextBox ID="DayBiginTextBox" runat="server" CssClass="imeON" TextMode="DateTime" Width="180px" MaxLength="20"></asp:TextBox>
             </td>
             <td class="auto-style37">から</td>
             <td class="auto-style23">&nbsp;</td>
@@ -79,11 +79,11 @@
             <td class="auto-style25">&nbsp;</td>
             <td class="auto-style26">お客様カナ</td>
             <td class="auto-style28">
-                <asp:TextBox ID="CustomerKanaTextBox" runat="server" CssClass="imeON" Width="170px"></asp:TextBox>
+                <asp:TextBox ID="CustomerKanaTextBox" runat="server" CssClass="imeON" Width="170px" MaxLength="20"></asp:TextBox>
             </td>
             <td class="auto-style39">&nbsp;</td>
             <td class="auto-style41">
-                <asp:TextBox ID="DayAffterTextBox" runat="server" CssClass="imeON" TextMode="DateTime" Width="180px"></asp:TextBox>
+                <asp:TextBox ID="DayAffterTextBox" runat="server" CssClass="imeON" TextMode="DateTime" Width="180px" MaxLength="20"></asp:TextBox>
             </td>
             <td class="auto-style37">まで</td>
             <td class="auto-style23">&nbsp;</td>
@@ -106,10 +106,10 @@
             <ItemStyle Width="30px" />
             </asp:BoundField>
             <asp:BoundField DataField="customer_name" HeaderText="お客様名" SortExpression="customer_name">
-            <ItemStyle Width="120px" />
+            <ItemStyle Width="150px" />
             </asp:BoundField>
             <asp:BoundField DataField="customer_kana" HeaderText="カナ" SortExpression="customer_kana">
-            <ItemStyle Width="150px" />
+            <ItemStyle Width="175px" />
             </asp:BoundField>
             <asp:BoundField DataField="address" HeaderText="住所" SortExpression="address">
             <ItemStyle Width="350px" />
@@ -123,7 +123,7 @@
             <asp:BoundField DataField="update_date" HeaderText="最終来店日" SortExpression="update_date">
             <ItemStyle Width="80px" />
             </asp:BoundField>
-            <asp:HyperLinkField NavigateUrl="~/CustomerCard.aspx" Text="編集" />
+            <asp:HyperLinkField Text="編集" DataNavigateUrlFields="customer_id" DataNavigateUrlFormatString="CustomerCard.aspx?id={0}" />
         </Columns>
         <EditRowStyle BackColor="#999999" />
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
