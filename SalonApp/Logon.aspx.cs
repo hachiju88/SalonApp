@@ -98,5 +98,10 @@ namespace SalonApp
             }
             return ret;
         }
+
+        protected void NewCustomer_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CustomerCard.aspx?customer_id={0}");
+        }
     }
 }

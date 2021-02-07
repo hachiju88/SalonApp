@@ -41,7 +41,14 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SalonDBConnectionString %>" SelectCommand="SELECT [customer_id], [customer_name], [customer_kana], [address], [tel], [customer_birth], [update_date] FROM [tbl_customer]">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SalonDBConnectionString %>" SelectCommand="SELECT [customer_id], [customer_name], [customer_kana], [address], [tel], [customer_birth], [update_date] FROM [tbl_customer] WHERE (([customer_id] &gt;= @customer_id) AND ([update_date] &gt;= @update_date) AND ([update_date] &lt;= @update_date2) AND ([customer_kana] LIKE '%' + @customer_kana + '%') AND ([customer_name] LIKE '%' + @customer_name + '%'))">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="CustomerIDTextBox" DefaultValue="1" Name="customer_id" PropertyName="Text" Type="Int32" />
+            <asp:ControlParameter ControlID="DayBiginTextBox" DefaultValue="2020-01-01" Name="update_date" PropertyName="Text" Type="DateTime" />
+            <asp:ControlParameter ControlID="DayAffterTextBox" DefaultValue="2200-01-01" Name="update_date2" PropertyName="Text" Type="DateTime" />
+            <asp:ControlParameter ControlID="CustomerKanaTextBox" DefaultValue="%" Name="customer_kana" PropertyName="Text" Type="String" />
+            <asp:ControlParameter ControlID="CustomerNameTextBox" DefaultValue="%" Name="customer_name" PropertyName="Text" Type="String" />
+        </SelectParameters>
     </asp:SqlDataSource>
     <table class="auto-style22">
         <tr>
@@ -121,11 +128,14 @@
             <ItemStyle Width="80px" />
             </asp:BoundField>
             <asp:BoundField DataField="update_date" HeaderText="最終来店日" SortExpression="update_date">
-            <ItemStyle Width="80px" />
+            <ItemStyle Width="100px" />
             </asp:BoundField>
             <asp:HyperLinkField Text="編集" DataNavigateUrlFields="customer_id" DataNavigateUrlFormatString="CustomerCard.aspx?id={0}" />
         </Columns>
         <EditRowStyle BackColor="#999999" />
+        <EmptyDataTemplate>
+            該当するデータがありません。検索条件を変更してから「検索を実行してください。」
+        </EmptyDataTemplate>
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
         <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
         <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />

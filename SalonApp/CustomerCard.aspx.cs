@@ -11,6 +11,7 @@ namespace SalonApp
 {
     public partial class CustomerCard : System.Web.UI.Page
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             //ポストバックかどうか判定する（他のWebページから遷移してきたかどうか)
@@ -45,8 +46,10 @@ namespace SalonApp
             {
                 //顧客IDが取得できる場合、セットする
                 e.Values["customer_id"] = customer_id;
-                //初回来店日の自動入力
+                //初回来店日の最終来店日の自動入力
                 e.Values["first_date"] = DateTime.Now;
+                e.Values["update_date"] = DateTime.Now;
+                
             }
             else
             {
@@ -103,20 +106,14 @@ namespace SalonApp
             if (e.CommandName == "Cancel" && FormView1.CurrentMode == FormViewMode.Insert)
             {
                 //リストに戻る
-                Response.Redirect("CustomerList.aspx");
+                Response.Redirect("Logon.aspx");
             }
-        }
-
-        protected void Button3_Click(object sender, EventArgs e)
-        {
-            //新規登録画面の登録ボタン
-        
-
         }
 
         protected void Button4_Click(object sender, EventArgs e)
         {
             //新規登録画面のキャンセルボタン
+            Response.Redirect("Logon.aspx");
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -130,6 +127,10 @@ namespace SalonApp
         protected void telTextBox0_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("ThanksForm.aspx");
         }
     }
 }
