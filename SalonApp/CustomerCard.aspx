@@ -25,6 +25,38 @@
             border-color: #6699FF;
             height: 60px;
         }
+        .auto-style6 {
+            width: 1090px;
+            border-collapse: collapse;
+        }
+        .auto-style7 {
+            background-color: #CCCCCC;
+            border-width: 2px;
+            border-color: #6699FF;
+            width: 248px;
+            height: 60px;
+        }
+        .auto-style10 {
+            background-color: #CCCCCC;
+            border-width: 2px;
+            border-color: #6699FF;
+            width: 175px;
+            height: 60px;
+        }
+        .auto-style12 {
+            background-color: #CCCCCC;
+            border-width: 2px;
+            border-color: #6699FF;
+            height: 60px;
+            width: 420px;
+        }
+        .auto-style13 {
+            background-color: #99CCFF;
+            border-width: 2px;
+            border-color: #6699FF;
+            width: 175px;
+            height: 60px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -137,40 +169,41 @@ WHERE customer_id = @customer_id" DeleteCommand="DELETE FROM [tbl_customer] WHER
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
         <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
         <InsertItemTemplate>
-            <table class="auto-style3">
+            <table class="auto-style6">
                 <tr>
-                    <td class="tableStyle1">お客様ID</td>
-                    <td class="tableStyle2">
-                        <asp:Label ID="customer_idLabel" runat="server" Text='<%# Eval("customer_id") %>' />
+                    <td class="auto-style10" colspan="2">お客様情報登録フォーム　（差し支えのない範囲で、入力にご協力くださいますようお願い申し上げます。）</td>
+                </tr>
+                <tr>
+                    <td class="auto-style13" colspan="1">カナ</td>
+                    <td class="auto-style7">
+                        <asp:TextBox ID="customer_kanaTextBox0" runat="server" CssClass="imeON" Text='<%# Bind("customer_kana") %>' Width="240px" />
+                        <br />
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="customer_kanaTextBox0" Display="Dynamic" ErrorMessage="必須入力です" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <br />
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="customer_kanaTextBox0" Display="Dynamic" ErrorMessage="20文字以内で入力してください" ForeColor="Red" ValidationExpression=".{0,20}"></asp:RegularExpressionValidator>
                     </td>
-                    <td class="tableStyle1">お誕生日</td>
-                    <td class="tableStyle2">
+                </tr>
+                <tr>
+                    <td class="auto-style13">お客様名</td>
+                    <td class="auto-style12">
+                        <asp:TextBox ID="customer_nameTextBox0" runat="server" CssClass="imeON" OnTextChanged="customer_nameTextBox_TextChanged" Text='<%# Bind("customer_name") %>' Width="240px" />
+                        <br />
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="customer_nameTextBox0" Display="Dynamic" ErrorMessage="必須入力です" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <br />
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ControlToValidate="customer_nameTextBox0" Display="Dynamic" ErrorMessage="20文字以内で入力してください" ForeColor="Red" ValidationExpression=".{0,20}"></asp:RegularExpressionValidator>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style13">お誕生日</td>
+                    <td class="auto-style12">
                         <asp:TextBox ID="customer_birthTextBox" runat="server" CssClass="imeOff" Text='<%# Bind("customer_birth","{0:yyyy/MM/dd}") %>' Width="240px" />
                         <br />
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator11" runat="server" ControlToValidate="customer_birthTextBox" Display="Dynamic" ErrorMessage="「0000/00/00」の書式で入力してください" ForeColor="Red" ValidationExpression="\d{4}(/(\d{2}))(/(\d{2}))"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
-                    <td class="tableStyle1">カナ</td>
-                    <td class="auto-style4" colspan="3">
-                        <asp:TextBox ID="customer_kanaTextBox0" runat="server" CssClass="imeON" Text='<%# Bind("customer_kana") %>' Width="240px" />
-                        <br />
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="customer_kanaTextBox0" Display="Dynamic" ErrorMessage="必須入力です" ForeColor="Red"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="customer_kanaTextBox0" Display="Dynamic" ErrorMessage="20文字以内で入力してください" ForeColor="Red" ValidationExpression=".{0,20}"></asp:RegularExpressionValidator>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="tableStyle1">お客様名</td>
-                    <td class="auto-style4" colspan="3">
-                        <asp:TextBox ID="customer_nameTextBox0" runat="server" CssClass="imeON" OnTextChanged="customer_nameTextBox_TextChanged" Text='<%# Bind("customer_name") %>' Width="240px" />
-                        <br />
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="customer_nameTextBox0" Display="Dynamic" ErrorMessage="必須入力です" ForeColor="Red"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ControlToValidate="customer_nameTextBox0" Display="Dynamic" ErrorMessage="20文字以内で入力してください" ForeColor="Red" ValidationExpression=".{0,20}"></asp:RegularExpressionValidator>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="tableStyle1">電話番号</td>
-                    <td class="auto-style4" colspan="3">
+                    <td class="auto-style13">電話番号</td>
+                    <td class="auto-style12">
                         <br />
                         <asp:TextBox ID="telTextBox0" runat="server" CssClass="imeOff" Text='<%# Bind("tel") %>' Width="240px" OnTextChanged="telTextBox0_TextChanged" />
                         <br />
@@ -179,24 +212,24 @@ WHERE customer_id = @customer_id" DeleteCommand="DELETE FROM [tbl_customer] WHER
                     </td>
                 </tr>
                 <tr>
-                    <td class="tableStyle1">住所</td>
-                    <td class="auto-style4" colspan="3">
+                    <td class="auto-style13">住所</td>
+                    <td class="auto-style12">
                         <asp:TextBox ID="addressTextBox0" runat="server" CssClass="imeON" Text='<%# Bind("address") %>' Width="500px" />
                         <br />
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator9" runat="server" ControlToValidate="addressTextBox0" Display="Dynamic" ErrorMessage="100文字以内で入力してください" ForeColor="Red" ValidationExpression=".{0,100}"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
-                    <td class="tableStyle1">ご要望・ご質問</td>
-                    <td class="auto-style4" colspan="3">
+                    <td class="auto-style13">ご要望・ご質問</td>
+                    <td class="auto-style12">
                         <asp:TextBox ID="customer_memoTextBox0" runat="server" CssClass="imeON" Height="60px" Text='<%# Bind("customer_memo") %>' TextMode="MultiLine" Width="800px" />
                         <br />
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator10" runat="server" ControlToValidate="customer_memoTextBox0" Display="Dynamic" ErrorMessage="200文字以内で入力してください" ForeColor="Red" ValidationExpression=".{0,200}"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
             </table>
-            <asp:Button ID="Button3" runat="server" CommandName="Insert" Height="50px" Text="登録" Width="100px" OnClick="Button3_Click" />
-            <asp:Button ID="Button4" runat="server" CommandName="Cancel" Height="50px" Text="キャンセル" Width="100px" CausesValidation="False" OnClick="Button4_Click" />
+            <asp:Button ID="Button3" runat="server" CommandName="Insert" Height="50px" Text="登録" Width="100px" PostBackUrl="~/CustomerCard.aspx" OnClick="Button3_Click" />
+            <asp:Button ID="Button4" runat="server" Height="50px" Text="キャンセル" Width="100px" CausesValidation="False" OnClick="Button4_Click" CommandArgument="Insert" />
         </InsertItemTemplate>
         <ItemTemplate>
             <br />
@@ -258,8 +291,8 @@ WHERE customer_id = @customer_id" DeleteCommand="DELETE FROM [tbl_customer] WHER
                 </tr>
             </table>
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/CustomerList.aspx">一覧に戻る</asp:HyperLink>
-            <asp:Button ID="Button5" runat="server" CommandName="Edit" Height="50px" Text="編集" Width="100px" />
-            <br />
+            　　　<asp:Button ID="Button5" runat="server" CommandName="Edit" Height="50px" Text="編集" Width="100px" />
+            　　　　　<br />
         </ItemTemplate>
         <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
         <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />

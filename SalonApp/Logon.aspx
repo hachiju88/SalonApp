@@ -44,7 +44,7 @@
         <tr>
             <td class="auto-style3">&nbsp;</td>
             <td class="auto-style4">
-                <asp:Button ID="NewCustomer" runat="server" Text="ご新規様 登録" TabIndex="4"/>
+                <asp:Button ID="NewCustomer" runat="server" Text="ご新規様 登録" TabIndex="4" OnClick="NewCustomer_Click"/>
             </td>
             <td>&nbsp;</td>
         </tr>

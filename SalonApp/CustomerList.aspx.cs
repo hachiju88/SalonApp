@@ -25,75 +25,25 @@ namespace SalonApp
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        //編集ボタン　カード型ビューにリンク
         {
-         //   Response.Redirect("CustomerCard.aspx?customer_id={0}");
+            //編集ボタン　カード型ビューにリンク
+
+            //   Response.Redirect("CustomerCard.aspx?customer_id={0}");
         }
 
         protected void FilterButton_Click(object sender, EventArgs e)
         {
-            //検索ボタン実行処理
-            //SQLステートメントの定義
-            string queryString = "SELECT customer_id, customer_name, customer_kana," +
-                "address, tel, customer_birth, update_date FROM tbl_customer " +
-                "WHERE ((customer_id LIKE '% ' + " + int.Parse(CustomerIDTextBox.Text) + " + ' %' )" +
-                "AND (customer_name LIKE '% ' + " + CustomerNameTextBox.Text + " + ' %' )" +
-                "AND (customer_kana LIKE '% ' + "+ CustomerKanaTextBox.Text + " + ' %' )" +
-                "AND (first_date <= " + DateTime.Parse(DayBiginTextBox.Text) + " )" +
-                "AND (update_date >= " + DateTime.Parse(DayAffterTextBox.Text) + " ))";
 
-            try
-            {
-                //接続文字列の取得
-                string connectionString = System.Configuration.ConfigurationManager.
-                    ConnectionStrings["SalonDBConnectionString"].ConnectionString;
-                //コネクションの定義
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    //コマンドの定義
-                    SqlCommand command = new SqlCommand(queryString, connection);
-                    //コネクションを開く
-                    connection.Open();
-                    //SQLステートメントの実行
-                    command.ExecuteNonQuery();
-                    //データの読み直し
-                    GridView1.DataBind();
-                }
-            }
-            catch (Exception)
-            {
-                MessageLabel.Text = "該当するデータがありません。条件を変えて検索してください。";
-            }
         }
         protected void FilterCancel_Click(object sender, EventArgs e)
         {
             //一覧に戻るボタン実行処理
-            //SQLステートメントの定義
-            string queryString = "SELECT customer_id, customer_name, customer_kana," +
-                "address, tel, customer_birth, update_date FROM tbl_customer ";
-
-            try
-            {
-                //接続文字列の取得
-                string connectionString = System.Configuration.ConfigurationManager.
-                    ConnectionStrings["SalonDBConnectionString"].ConnectionString;
-                //コネクションの定義
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    //コマンドの定義
-                    SqlCommand command = new SqlCommand(queryString, connection);
-                    //コネクションを開く
-                    connection.Open();
-                    //SQLステートメントの実行
-                    command.ExecuteNonQuery();
-                    //データの読み直し
-                    GridView1.DataBind();
-                }
-            }
-            catch (Exception)
-            {
-                MessageLabel.Text = "該当するデータがありません。条件を変えて検索してください。";
-            }
+            CustomerIDTextBox.Text = "";
+            CustomerKanaTextBox.Text = "";
+            CustomerNameTextBox.Text = "";
+            DayBiginTextBox.Text = "";
+            DayAffterTextBox.Text = "";
+            FilterButton_Click(sender, e);
         }
 
         protected void CustomerNameTextBox_TextChanged(object sender, EventArgs e)

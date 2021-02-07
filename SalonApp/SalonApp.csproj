@@ -74,9 +74,12 @@
     <None Include="Resources\menuBack.png" />
     <Content Include="Logon.aspx" />
     <Content Include="Menu.aspx" />
+    <Content Include="Resources\menuBackButton.png" />
+    <Content Include="Resources\thanksMessage.png" />
     <Content Include="StaffMaster.aspx" />
     <Content Include="StyleSheet1.css" />
     <Content Include="TaskMaster.aspx" />
+    <Content Include="ThanksForm.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +140,13 @@
     </Compile>
     <Compile Include="TaskMaster.aspx.designer.cs">
       <DependentUpon>TaskMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThanksForm.aspx.cs">
+      <DependentUpon>ThanksForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThanksForm.aspx.designer.cs">
+      <DependentUpon>ThanksForm.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

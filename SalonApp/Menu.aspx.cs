@@ -20,8 +20,8 @@ namespace SalonApp
                     UserPanel.Visible = false;
                     break;
                 case 2:     //一般ユーザー
-                    UserPanel.Visible = true; 
                     AdminPanel.Visible = false;
+                    UserPanel.Visible = true;
                     break;
                 default:
                     Response.Redirect("Logon.aspx");
@@ -40,11 +40,10 @@ namespace SalonApp
                 //セッション変数の値が存在しない場合
                 return 0;
             }
-            if (Convert.ToBoolean(Session["AdminFlag"]) == true)
+            if (Convert.ToBoolean(Session["AdminFlag"]))
             {
                 //  セッション変数Admin = true
                 return 1;
-
             }
             else
             {
